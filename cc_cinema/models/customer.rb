@@ -22,13 +22,13 @@ class Customer
     $2
     ) RETURNING id"
     values = [@name, @funds]
-  customer = SqlRunner.run(sql, values)[0]
-  @id = customer['id'].to_i
+    customer = SqlRunner.run(sql, values)[0]
+    @id = customer['id'].to_i
   end
 
   def update()
     sql = "UPDATE customers SET (
-    first_name, funds
+    name, funds
     ) VALUES ($1, $2) WHERE id = $3"
     values = [@name, @funds, @id]
     SqlRunner.run(sql, values)

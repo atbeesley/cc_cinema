@@ -4,16 +4,16 @@ require_relative("../db/sql_runner")
 
 class Ticket
 
-attr_reader :id
-attr_accessor :film_id, :customer_id
+  attr_reader :id
+  attr_accessor :film_id, :customer_id
 
-def initialize( options )
+  def initialize( options )
 
-@id = options['id'].to_i
-@film_id = options['film_id']
-@customer_id = options['customer_id']
+    @id = options['id'].to_i
+    @film_id = options['film_id']
+    @customer_id = options['customer_id']
 
-end
+  end
 
   def save()
     sql = "INSERT INTO tickets (film_id, customer_id) VALUES ($1, $2) RETURNING id"
