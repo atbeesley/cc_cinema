@@ -1,11 +1,11 @@
-DROP TABLE customers;
-DROP TABLE films;
-DROP TABLE tickets;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS films;
 
 CREATE TABLE customers(
   id SERIAL4 PRIMARY KEY,
-name VARCHAR(255),
-funds INT4
+  name VARCHAR(255),
+  funds INT4
 );
 
 CREATE TABLE films(
