@@ -43,7 +43,7 @@ class Customer
   def self.all()
     sql = "SELECT * FROM customers"
     customer_data = SqlRunner.run(sql)
-    return Star.map_items(customer_data)
+    return Customer.map_items(customer_data)
   end
 
   def self.delete_all()
